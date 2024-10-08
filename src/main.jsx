@@ -6,7 +6,7 @@ import Create from './routes/Create';
 import Read from './routes/Read';
 import Update from './routes/Update';
 import Delete from './routes/Delete';
-import './index.css'
+import './index.css';
 
 const router = createBrowserRouter([
   {

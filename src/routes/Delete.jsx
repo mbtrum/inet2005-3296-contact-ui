@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 
-export default function Create(){
+export default function Delete(){
   const { id } = useParams();
 
   return (
