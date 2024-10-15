@@ -27,18 +27,18 @@ export default function Home() {
   }, []); // run only once
 
   return (
-    <main>
-      <h1>Home page</h1>
-      <Link to="/create">Add New Contact</Link>
+    <>
+      <h1>My Contacts</h1>
+      <Link to="/create" className="btn btn-outline-secondary">Add New Contact</Link>
       {
         contacts.length > 0 ?
         contacts.map(contact => (
           <div>
-            { contact.firstName + ' ' + contact.lastName } 
+            { contact.firstName + ' ' + contact.lastName } <Link to={`/update/${contact.id}`}>update</Link> <Link to={`/delete/${contact.id}`}>delete</Link>
           </div>
         )) :
         <p>No contacts.</p>
       }
-    </main>
+    </>
   )
 }
