@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import Card from '../ui/Card';
 
 export default function Delete(){
   const { id } = useParams();
@@ -38,26 +39,9 @@ export default function Delete(){
     <>
       <h1>Remove Contact</h1>
       <h2>Are you sure you want to remove this contact?</h2>
-      <div className="card mt-3">
-        { contact && 
-        <div className="card-body">
-          <div className="d-flex align-items-center position-relative">
-            <img src={`${apiHost}/images/${contact.filename}`} className="thumbnail" />
 
-            <div className="contact-info">
-              <h5 className="card-title">{ contact.firstName + ' ' + contact.lastName }</h5>
-              <p className="card-text">
-                { contact.phone }<br />{ contact.email }
-              </p>                  
-            </div>
-            
-            <div className="position-absolute top-0 end-0">
-              <Link to={`/update/${contact.id}`} className="btn btn-light btn-sm"><i className="bi bi-pencil"></i></Link>&nbsp;
-              <Link to={`/delete/${contact.id}`} className="btn btn-light btn-sm"><i className="bi bi-trash"></i></Link>
-            </div>  
-          </div>                         
-        </div>}
-      </div>
+      { contact && <Card contact={contact} apiHost={apiHost} showLinks={false} />}
+      
       <p>
         <button className="btn btn-danger">Yes</button> <Link to="/" className="btn btn-outline-secondary">Cancel</Link>
       </p>

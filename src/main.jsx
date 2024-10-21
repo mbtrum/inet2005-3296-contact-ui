@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from './routes/Home';
 import Create from './routes/Create';
+import Create2 from './routes/Create2';
 import Read from './routes/Read';
 import Update from './routes/Update';
 import Delete from './routes/Delete';
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/create",
-    element: <Create />
+    element: <Create2 />
   },
   {
     path: "/read/:id",
